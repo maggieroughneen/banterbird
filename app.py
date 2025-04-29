@@ -7,21 +7,25 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
+
 @app.route('/api/posts')
-def get_posts():
-    with open('posts.json','r') as file:
-        posts = json.load(file)
-    return jsonify(posts)
+def get_post():
+   with open('posts.json', 'r') as file:
+       posts = json.load(file)
+   return jsonify(posts)
 
 @app.route('/api/add_post', methods=['POST'])
 def add_post():
     new_post = request.get_json()
 
     with open('posts.json', 'r') as file:
-        posts = json.load(file)
+       posts = json.load(file)
     posts.insert(0, new_post)
 
-    with open('posts.json', 'w') as file:
+    with open('posts.json','w') as file:
         json.dump(posts, file, indent=4)
 
     return jsonify({"status": "success"}), 201
