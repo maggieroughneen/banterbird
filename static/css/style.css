@@ -1,3 +1,36 @@
+h1 {
+    padding: 20px;
+    font-weight: 600;
+    font-style: normal;
+    color: #9eedd7;
+    font-family: "Rubik Scribble", system-ui;
+}
+
 body{ 
-    background-color: rgb(80, 143, 221);
+    background-color: rgb(152, 158, 165);
+    text-align:center;
+    font-size:20px;
+    /*italicizes the text*/
+    font-family: "Quicksand", sans-serif;
+    /*the border is 2 pixels and a solid line, with the color #D37AFA*/
+   
+}
+
+#postInput{
+    background-color: rgb(185, 230, 210);
+}
+#username {
+    text-align:center;
+    font-size:20px;
+    /*italicizes the text*/
+    font-family:italic;
+    color: #9eefd9;
+    /*the border is 2 pixels and a solid line, with the color #D37AFA*/
+    border:2px solid #dfc1ef;
+    /*padding is the empty space between border and text*/
+    padding:8px;
+    /*margin is the space around the border*/
+    margin:1px;
+    /*how rounded the border edges are*/
+    border-radius:50px;
 }
