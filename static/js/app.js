@@ -29,12 +29,18 @@ function submitPost() {
 }
 
 window.onload = async () => {
-    try {
-      document.getElementById("username").innerText = username;
-      const response = await fetch("/api/posts");
-      const posts = await response.json();
-      posts.forEach(post => renderPost(post));
-    } catch (error) {
-      console.error("FIX THISSSS", error)
-    }
+    
 };
+
+setInterval(async () => {
+    try {
+        document.getElementById("username").innerText = username;
+        const response = await fetch("/api/posts");
+        const posts = await response.json();
+        document.getElementById("feed").innerHTML = ""; //clears feed before re-rendering
+        posts.forEach(post => renderPost(post));
+      } catch (error) {
+        console.error("FIX THISSSS", error)
+      }
+}, 5000); //Poll every 5 sec for new post
+
